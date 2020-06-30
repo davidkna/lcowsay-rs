@@ -154,6 +154,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 
 [[package]]
+name = "fst"
+version = "0.4.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a7293de202dbfe786c0b3fe6110a027836c5438ed06db7b715c9955ff4bfea51"
+
+[[package]]
 name = "geo"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -211,8 +217,20 @@ checksum = "0493c6fb308d367d0aed7acd341adbc1c2f216c135073e4b73b652c5d0d6b54c"
 dependencies = [
  "atlatl",
  "bincode",
- "hyphenation_commons",
+ "hyphenation_commons 0.7.1",
  "pocket-resources",
+ "serde",
+]
+
+[[package]]
+name = "hyphenation"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5cac046ca4663fffa06b74d0596aa1a36541164f644de02bf6977ed14449f084"
+dependencies = [
+ "bincode",
+ "fst",
+ "hyphenation_commons 0.8.0",
  "serde",
 ]
 
@@ -223,6 +241,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9e3461ab51107f7beb8e0c46606d6eb7dfa48880014a29c170afad3ce6b25add"
 dependencies = [
  "atlatl",
+ "serde",
+]
+
+[[package]]
+name = "hyphenation_commons"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "12127b221b96badfbc6e709650e5382e71493fe86633273dc00a85936fd83221"
+dependencies = [
+ "fst",
  "serde",
 ]
 
@@ -256,7 +284,7 @@ dependencies = [
 name = "lcowsay"
 version = "0.2.0"
 dependencies = [
- "hyphenation",
+ "hyphenation 0.8.0",
  "lcat",
  "mimalloc",
  "structopt",
@@ -665,7 +693,7 @@ version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
 dependencies = [
- "hyphenation",
+ "hyphenation 0.7.1",
  "unicode-width",
 ]
 
